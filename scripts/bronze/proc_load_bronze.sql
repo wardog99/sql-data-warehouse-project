@@ -130,14 +130,14 @@ BEGIN
         PRINT '>> -------------';
 
         SET @start_time = GETDATE();
-        --Truncate the table prd_az12
-        PRINT '>> Truncating Table: bronze.erp_prd_az12';
-        TRUNCATE TABLE bronze.erp_prd_az12;
+        --Truncate the table erp_px_cat_g1v2
+        PRINT '>> Truncating Table: bronze.erp_px_cat_g1v2';
+        TRUNCATE TABLE bronze.erp_px_cat_g1v2;
 
-        --load the table bronze.prd_az12
-        PRINT '>> Inserting Data Into: bronze.erp_prd_az12';
-        BULK INSERT bronze.erp_prd_az12
-        FROM '/var/opt/mssql/data/prd_az12.csv'
+        --load the table bronze.erp_px_cat_g1v2
+        PRINT '>> Inserting Data Into: bronze.erp_px_cat_g1v2';
+        BULK INSERT bronze.erp_px_cat_g1v2
+        FROM '/var/opt/mssql/data/px_cat_g1v2.csv'
         WITH (
             FIRSTROW = 2,
             FIELDTERMINATOR = ',',
